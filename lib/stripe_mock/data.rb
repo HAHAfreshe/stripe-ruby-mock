@@ -193,19 +193,6 @@ module StripeMock
         currency: currency,
         destination: nil,
         fraud_details: {},
-        billing_details: {
-          address: {
-            city: "City",
-            country: nil,
-            line1: "Address",
-            line2: nil,
-            postal_code: "545454",
-            state: nil
-          },
-          email: nil,
-          name: "John Bro",
-          phone: nil
-        },
         payment_method_details: {
           card: {
             brand: "visa",
@@ -1329,7 +1316,7 @@ module StripeMock
           name: 'John Dolton',
           phone: nil
         },
-        "created": '1234567890',
+        created: 1461880226,
         customer: params[:customer] || nil,
         metadata: {
           order_id: '123456789'
