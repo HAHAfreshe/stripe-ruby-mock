@@ -193,31 +193,18 @@ module StripeMock
         currency: currency,
         destination: nil,
         fraud_details: {},
-        billing_details: {
-          address: {
-            city: "City",
-            country: nil,
-            line1: "Address",
-            line2: nil,
-            postal_code: "545454",
-            state: nil
-          },
-          email: nil,
-          name: "John Bro",
-          phone: nil
-        },
         payment_method_details: {
           card: {
             brand: "visa",
             checks: {
-              address_line1_check: "pass",
-              address_postal_code_check: "pass",
-              cvc_check: nil
+              address_line1_check: nil,
+              address_postal_code_check: nil,
+              cvc_check: "pass"
             },
             country: "US",
-            exp_month: 1,
-            exp_year: 2024,
-            fingerprint: "QnsCgolnfxuTu3Ih",
+            exp_month: 12,
+            exp_year: 2013,
+            fingerprint: "3TQGpK9JoY1GgXPw",
             funding: "credit",
             installments: nil,
             last4: "4242",
@@ -225,10 +212,11 @@ module StripeMock
             three_d_secure: nil,
             wallet: nil
           },
-          "type": "card"
+          type: "card"
         },
         receipt_email: nil,
         receipt_number: nil,
+        receipt_url: nil,
         refunded: false,
         shipping: {},
         statement_descriptor: "Charge #{charge_id}",
@@ -289,7 +277,8 @@ module StripeMock
         charge: "ch_4fWhYjzQ23UFWT",
         receipt_number: nil,
         status: "succeeded",
-        reason: "requested_by_customer"
+        reason: "requested_by_customer",
+        receipt_url: nil
       }.merge(params)
     end
 
@@ -399,7 +388,7 @@ module StripeMock
         canceled_at: nil,
         collection_method: 'charge_automatically',
         ended_at: nil,
-        start: 1308595038,
+        start_date: 1308595038,
         object: 'subscription',
         trial_start: 1308595038,
         trial_end: 1308681468,
@@ -1327,7 +1316,7 @@ module StripeMock
           name: 'John Dolton',
           phone: nil
         },
-        "created": '1234567890',
+        created: 1461880226,
         customer: params[:customer] || nil,
         metadata: {
           order_id: '123456789'
