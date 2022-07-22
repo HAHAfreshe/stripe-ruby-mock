@@ -290,7 +290,8 @@ module StripeMock
         charge: "ch_4fWhYjzQ23UFWT",
         receipt_number: nil,
         status: "succeeded",
-        reason: "requested_by_customer"
+        reason: "requested_by_customer",
+        receipt_url: nil
       }.merge(params)
     end
 
@@ -400,7 +401,7 @@ module StripeMock
         canceled_at: nil,
         collection_method: 'charge_automatically',
         ended_at: nil,
-        start: 1308595038,
+        start_date: 1308595038,
         object: 'subscription',
         trial_start: 1308595038,
         trial_end: 1308681468,
